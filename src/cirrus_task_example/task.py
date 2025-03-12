@@ -6,14 +6,14 @@ from stactask import Task
 
 
 class CirrusTaskExample(Task):
-    name = 'cirrus-task-example'
-    description = 'An example Cirrus Task'
+    name = "cirrus-task-example"
+    description = "An example Cirrus Task"
 
     def validate(self) -> None:
         return True
 
     def process(self, **kwargs: Any) -> list[dict[str, Any]]:
-        if "invalid" in self.process_definition['id']:
+        if "invalid" in self.process_definition["id"]:
             raise Exception("invalid")
 
         # create an item
@@ -27,9 +27,9 @@ class CirrusTaskExample(Task):
                         [-71.4278035338514, 42.3392708844627],
                         [-70.6447744862405, 42.3532726633038],
                         [-70.2637344878527, 43.3458642540582],
-                        [-71.4667693618289, 43.3262376051166]
+                        [-71.4667693618289, 43.3262376051166],
                     ]
-                    ]
+                ],
             },
             bbox=[-71.466769, 42.339271, -70.263734, 43.345864],
             datetime=datetime(2025, 3, 4, 15, 41, 14),
@@ -50,9 +50,5 @@ class CirrusTaskExample(Task):
         return [item.to_dict()]
 
 
-def cli() -> None:
+if __name__ == "__main__":
     CirrusTaskExample.cli()
-
-
-if __name__ == '__main__':
-    cli()
