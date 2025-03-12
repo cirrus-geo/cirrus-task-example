@@ -1,6 +1,6 @@
 # Cirrus Task Example
 
-*This repository is an example of a Cirrus task that can be used as a template.*
+*This repository is an example of a Cirrus task that can be used as a template. See the [DEVELOPMENT.md](DEVELOPMENT.md) file for instructions on developing a task.*
 
 **Insert Task Desription here**
 
@@ -22,8 +22,6 @@ Configuration parameters are available available to the task through the Cirrus 
 | option2 | string | An optional parameter (Default: "")  |
 
 ## Development
-
-See the [DEVELOPMENT.md](DEVELOPMENT.MD) file for instructions on developing a task.*
 
 Tasks can be run locally with the built-in CLI.
 
