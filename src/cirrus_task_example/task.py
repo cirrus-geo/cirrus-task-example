@@ -50,9 +50,5 @@ class CirrusTaskExample(Task):
         return [item.to_dict()]
 
 
-def cli() -> None:
+if __name__ == "__main__":
     CirrusTaskExample.cli()
-
-
-if __name__ == '__main__':
-    cli()

@@ -28,7 +28,7 @@ See the [DEVELOPMENT.md](DEVELOPMENT.MD) file for instructions on developing a t
 Tasks can be run locally with the built-in CLI.
 
 ```
-$ task.py run -h
+$ uv run cirrus-task-example
 
 usage: task.py run [-h] [--logging LOGGING] [--output OUTPUT] [--workdir WORKDIR] [--save-workdir] [--skip-upload] [--skip-validation] [--upload] [--no-upload] [--validate]
                    [--no-validate] [--local]
