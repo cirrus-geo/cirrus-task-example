@@ -13,7 +13,7 @@ class CirrusTaskExample(Task):
         return True
 
     def process(self, **kwargs: Any) -> list[dict[str, Any]]:
-        if "invalid" in self.process_definition["id"]:
+        if "invalid" in self.process_definition.get("id", ""):
             raise Exception("invalid")
 
         # create an item
@@ -48,6 +48,10 @@ class CirrusTaskExample(Task):
 
         # return a list of Items
         return [item.to_dict()]
+
+
+def lambda_handler(event: dict, context: dict = {}):
+    return CirrusTaskExample.handler(payload=event)
 
 
 if __name__ == "__main__":
