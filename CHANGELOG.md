@@ -20,6 +20,6 @@ Initial release
 
 [unreleased]: https://github.com/cirrus-geo/cirrus-task-example/compare/v2025-03-12..main
 [v2025-03-12]: https://github.com/cirrus-geo/cirrus-task-example/compare/v2025-03-11..v2025-03-12
-[v2025-03-01]: https://github.com/cirrus-geo/cirrus-task-example/tree/v2025-03-11
+[v2025-03-11]: https://github.com/cirrus-geo/cirrus-task-example/tree/v2025-03-11
 [#1]: https://github.com/cirrus-geo/cirrus-task-example/pull/1
 [#2]: https://github.com/cirrus-geo/cirrus-task-example/pull/2
