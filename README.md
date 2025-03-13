@@ -68,3 +68,17 @@ To run the tests:
 ```
 uv run pytest
 ```
+
+# Versions and Releases
+
+![CalVer:YYYY.0M.0D\_MICRO](https://img.shields.io/badge/CalVer-YYYY.0M.0D__MICRO-00aa00.svg)
+
+This project uses CalVer for versioning releases.  The format is specified as
+`YYYY.0M.0D_MICRO`, where the tokens are:
+
+| token | description                     | example(s)             |
+|-------|---------------------------------|------------------------|
+| YYYY  | the full year                   | 2006, 2016, 2106)      |
+| 0M    | the zero-padded month           | 01, 02 ... 11, 12      |
+| 0D    | the zero-padded day of month    | 01, 02 ... 30, 31      |
+| MICRO | (optional) free form, as needed | alpha, rc0, post0, ... |
