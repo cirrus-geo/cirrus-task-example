@@ -1,15 +1,17 @@
 import json
-import pytest
-from pathlib import Path
 import os
+from pathlib import Path
+
+import pytest
 
 from cirrus_task_example.task import CirrusTaskExample
+
 
 # Helper function to get test data
 def get_test_cases():
     test_cases = []
     fixtures_dir = Path(__file__).parent / 'fixtures' / 'payloads'
-    
+
     # Walk through the directory and find all directories with an 'in.json' file
     for dirpath, dirnames, filenames in os.walk(fixtures_dir):
         if 'in.json' in filenames:

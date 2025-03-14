@@ -24,8 +24,13 @@ cirrus-task-example = "cirrus_task_example.task:CirrusTaskExample.cli"
 
 [tool.mypy]
 show_error_codes = true
-strict = true
-warn_unused_ignores = true
+strict = true # ideally
+disallow_subclassing_any = false # too strict for stactask's configuration
+disallow_untyped_decorators = false # too strict for stactask's configuration
+
+[[tool.mypy.overrides]]
+module = ["untyped_package.*"]
+follow_untyped_imports = true
 
 [tool.pytest.ini_options]
 filterwarnings = ["ignore::DeprecationWarning"]

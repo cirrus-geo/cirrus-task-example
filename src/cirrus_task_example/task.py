@@ -3,18 +3,19 @@ from typing import Any
 
 import pystac
 from stactask import Task
+from stactask.exceptions import FailedValidation
 
 
 class CirrusTaskExample(Task):
     name = "cirrus-task-example"
     description = "An example Cirrus Task"
 
-    def validate(self) -> None:
+    def validate(self) -> bool:
+        if "id" not in self._payload:
+            raise FailedValidation("invalid")
         return True
 
     def process(self, **kwargs: Any) -> list[dict[str, Any]]:
-        if "invalid" in self.process_definition.get("id", ""):
-            raise Exception("invalid")
 
         # create an item
         item = pystac.Item(
@@ -50,8 +51,10 @@ class CirrusTaskExample(Task):
         return [item.to_dict()]
 
 
-def lambda_handler(event: dict, context: dict = {}):
-    return CirrusTaskExample.handler(payload=event)
+def lambda_handler(
+    event: dict[str, Any], context: dict[str, Any] = {}
+) -> dict[str, Any]:
+    return CirrusTaskExample.handler(payload=event)  # type: ignore[no-any-return]
 
 
 if __name__ == "__main__":
